@@ -1,95 +1,57 @@
-# 🪣 **CrophSlog**  
-_Cleansing the clogged arteries of ancient Lua code._
+# 🛠️ VeinTap & CrophSlog
 
-```
-    ██████╗██████╗  ██████╗ ██████╗ ██╗  ██╗███████╗██╗      ██████╗  ██████╗  ██████╗ 
-    ██╔════╝██╔══██╗██╔═══██╗██╔══██╗██║ ██╔╝██╔════╝██║     ██╔═══██╗██╔════╝ ██╔═══██╗
-    ██║     ██████╔╝██║   ██║██████╔╝█████╔╝ █████╗  ██║     ██║   ██║██║  ███╗██║   ██║
-    ██║     ██╔═══╝ ██║   ██║██╔═══╝ ██╔═██╗ ██╔══╝  ██║     ██║   ██║██║   ██║██║   ██║
-    ╚██████╗██║     ╚██████╔╝██║     ██║  ██╗███████╗███████╗╚██████╔╝╚██████╔╝╚██████╔╝
-     ╚═════╝╚═╝      ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ 
-                                
-    CrophSlog: Taint Analysis for Lua — Clean the Code Sludge!
-```
-
-## 💡 What is CrophSlog?
-
-**CrophSlog** is your trusty sewer diver for Lua codebases. It performs **taint analysis**, tracking the flow of untrusted data (**sources**) through your code to dangerous operations (**sinks**). Like draining sludge from ancient pipes, it clears out the hidden risks in your Lua projects.
-
-🪤 **Catch** the taints.  
-🪠 **Clear** the paths.  
-🧹 **Clean** the sludge.
-
-## 🧩 Features
-
-- 📁 **Recursive Directory Analysis**: Scans all `.lua` files under a specified directory.
-- 🕸️ **Taint Tracking Engine**: Follows data from **sources** to **sinks**, identifying dangerous paths.
-- 🚿 **Cleansers Recognition**: Knows when data gets cleaned, avoiding false positives.
-- 🪢 **Taint Chains Display**: Shows how tainted data moves through your code, step-by-step.
-- 📝 **Markdown Reports**: Pretty-prints results, complete with file paths and line numbers.
-- 🧩 **JSON Export**: Outputs machine-readable summaries of taint chains.
-- 🎨 **ASCII Art and Emojis**: Because code analysis doesn't have to be boring.
-
-## 🛠️ Setup
-
-### 1. Install Python dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Create your `config.yaml`
-
-```yaml
-sources:
-  - get_input
-  - os.getenv
-sinks:
-  - os.execute
-  - io.popen
-propagators:
-  - string.format
-  - table.insert
-cleansers:
-  - sanitize_input
-```
-
-## 🚦 Usage
-
-```bash
-python crophslog.py --base-dir /path/to/lua/project --config /path/to/config.yaml
-```
-
-### Arguments:
-
-- `--base-dir`: Root directory to recursively analyze.
-- `--config`: Path to the YAML config defining **sources**, **sinks**, **propagators**, and **cleansers**.
-
-## 🪣 Output Example
-
-```
-🗂️ File: ./scripts/vulnerable.lua
-⚠️  Taint Chain:
-  - Source: get_input() at line 5
-  - Propagation via variable 'user_cmd'
-  - Sink: os.execute() at line 15
-
-🔥 Danger Level: High
-```
-
-### JSON Export:  
-`crophslog_summary.json` contains full taint chains and metadata for further analysis.
-
-## ❓ Why *CrophSlog*?
-
-In the clogged pipelines of legacy Lua code lies a festering sludge of insecure data flows. **CrophSlog** dives into the depths, dredging up the muck and leaving your codebase sparkling (or at least safe).
-
-## 🤝 Contributing
-
-Want to help dredge deeper or make the sludge flow smoother? Fork, tweak, and send a PR!
-
-## 🪶 License
-
-MIT License — Open, free, and sludge-friendly.
+_Uncover the sludge, trace the veins — Lua code hygiene tools._
 
 ---
+
+## 🩸 **VeinTap**
+
+**VeinTap** extracts embedded Lua code from template files (ending in `.lua`) containing Lua code blocks wrapped in `<? ?>`. Each template compiles into a clean Lua file.
+
+### 🚀 Usage
+```bash
+./utils/veintap.py --input-dir templates/ --output-dir compiled/
+```
+
+### 🔍 Features
+- Extracts multi-line Lua code blocks from templates.
+- Outputs one Lua file per template (`*_compiled.lua`).
+- Emoji-filled logs & ASCII art.
+
+---
+
+## 🪣 **CrophSlog**
+
+**CrophSlog** performs taint analysis on Lua codebases. It tracks data from **sources** to **sinks**, flagging insecure flows across `.lua` files.
+
+### 🚀 Usage
+```bash
+./crophslog.py --base-dir lua_project/ --config config.yaml
+```
+
+### 🔍 Features
+- Recursive taint analysis across `.lua` files.
+- Configurable **sources**, **sinks**, **propagators**, **cleansers**.
+- Markdown & JSON summaries with emoji logs & ASCII art.
+
+---
+
+## 🧰 Setup
+
+```bash
+make  # Builds dependencies for both tools
+```
+
+---
+
+## 📖 Example Workflow
+1. **VeinTap**: Extract Lua from templates.
+2. **CrophSlog**: Analyze the extracted Lua files for taint flows.
+
+Stay sludge-free. Trace the veins.
+
+---
+
+🖤 MIT License — Open, free, and friendly.
+
+

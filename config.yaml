@@ -1,11 +1,8 @@
 sources:
-  - io.read
-  - os.getenv
+  - HTTP_GET_PARAM_BY_NAME
 
 cleansers:
   - sanitize
 
 sinks:
-  - os.execute
-  - loadstring
-  - print
+  - OUT
