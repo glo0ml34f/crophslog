@@ -1,0 +1,2 @@
+default:
+	./dobuild.sh
