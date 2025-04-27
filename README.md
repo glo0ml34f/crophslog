@@ -1,9 +1,3 @@
-Ah, *CrophSlog*! That hits just right—grimy, eldritch, and techy all at once.
-
-Here’s the updated `README.md` with **CrophSlog** proudly oozing through:
-
----
-
 # 🪣 **CrophSlog**  
 _Cleansing the clogged arteries of ancient Lua code._
 
@@ -99,5 +93,3 @@ Want to help dredge deeper or make the sludge flow smoother? Fork, tweak, and se
 MIT License — Open, free, and sludge-friendly.
 
 ---
-
-Let me know if you'd like badges, example Lua snippets, or anything else fancy in here!
