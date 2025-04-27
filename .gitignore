@@ -1,0 +1,5 @@
+build/
+*.json
+*.md
+test
+tree-sitter-lua

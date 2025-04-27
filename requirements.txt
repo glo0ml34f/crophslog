@@ -1,0 +1,4 @@
+tree_sitter
+colorama
+pyyaml
+setuptools

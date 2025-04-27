@@ -1,0 +1,11 @@
+sources:
+  - io.read
+  - os.getenv
+
+cleansers:
+  - sanitize
+
+sinks:
+  - os.execute
+  - loadstring
+  - print
